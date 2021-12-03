@@ -92,7 +92,7 @@ class _Screen1State extends State<Screen1> {
                       borderRadius: BorderRadius.all(Radius.circular(25)),
                     ),
                     child: Text(
-                      "Electronics",
+                      "Men's",
                       style: TextStyle(
                           color: Provider.of<S_index>(context, listen: true)
                                       .s_index ==
