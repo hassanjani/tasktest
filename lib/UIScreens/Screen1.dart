@@ -164,6 +164,12 @@ class _Screen1State extends State<Screen1> {
                             itemBuilder: (BuildContext context, int index) {
                               return GestureDetector(
                                 onTap: (){
+                                  Provider.of<TodoModel>(
+                                      context,
+                                      listen: false)
+                                      .changeSProduct(value
+                                      .Filtered_ProductList![
+                                  index]);
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
@@ -234,33 +240,21 @@ class _Screen1State extends State<Screen1> {
                                                 SizedBox(
                                                   height: 5,
                                                 ),
-                                                GestureDetector(
-                                                  onTap: () {
-                                                    Provider.of<TodoModel>(
-                                                            context,
-                                                            listen: false)
-                                                        .changeSProduct(value
-                                                                .Filtered_ProductList![
-                                                            index]);
-
-
-                                                  },
-                                                  child: Container(
-                                                      padding: EdgeInsets.only(
-                                                          top: 8,
-                                                          bottom: 8,
-                                                          right: 12,
-                                                          left: 12),
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            Colors.orangeAccent,
-                                                        borderRadius:
-                                                            BorderRadius.all(
-                                                                Radius.circular(
-                                                                    25)),
-                                                      ),
-                                                      child: Text("Add to Job")),
-                                                ),
+                                                Container(
+                                                    padding: EdgeInsets.only(
+                                                        top: 8,
+                                                        bottom: 8,
+                                                        right: 12,
+                                                        left: 12),
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          Colors.orangeAccent,
+                                                      borderRadius:
+                                                          BorderRadius.all(
+                                                              Radius.circular(
+                                                                  25)),
+                                                    ),
+                                                    child: Text("Add to Job")),
                                               ],
                                             ),
                                             Container(
